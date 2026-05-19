@@ -1,231 +1,162 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 export default function ResumePage() {
   const skills = [
+    "Next.js",
     "HTML",
-    "CSS",
+    " CSS",
     "JAVA",
     "NEXT JS",
     "PYTHON",
   ];
 
+  const projects = [
+    "Online Rental Car Booking System",
+  ];
+
   return (
-    <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-950 text-white overflow-hidden relative">
-
-      {/* Background Blur */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-pink-500 rounded-full blur-3xl opacity-20"></div>
-
-      <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500 rounded-full blur-3xl opacity-20"></div>
-
-      <div className="relative max-w-6xl mx-auto px-6 py-12">
-
+    <main className="min-h-screen bg-gray-100 py-10 px-4">
+      <div className="max-w-5xl mx-auto bg-white shadow-2xl rounded-2xl overflow-hidden">
         {/* Header */}
-        <motion.section
-          initial={{ opacity: 0, y: -80 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 shadow-2xl"
-        >
+        <div className="bg-slate-900 text-white p-8">
+          <h1 className="text-4xl font-bold">kaviya</h1>
 
-          <div className="flex flex-col md:flex-row items-center gap-10">
-
-            <motion.img
-              whileHover={{ scale: 1.08 }}
-              src="/PIC.jpg"
-              alt="profile"
-              className="w-44 h-44 rounded-full border-4 border-pink-500 shadow-2xl object-cover"
-            />
-
-            <div className="text-center md:text-left">
-
-              <h1 className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-                Kaviya K
-              </h1>
-
-              <p className="text-2xl mt-4 text-gray-300">
-                Diploma in Computer Engineering - 3rd Year
-              </p>
-
-              <p className="mt-3 text-lg text-gray-400">
-                Paavai Polytechnic College - Namakkal, Tamilnadu - 637201
-              </p>
-
-              <div className="mt-6 space-y-2 text-gray-300 text-lg">
-                <p>📞 6369955734</p>
-                <p>✉️ s.kaviya5724@gmail.com</p>
-                <p>📍 Namakkal, Tamilnadu</p>
-              </div>
-
-            </div>
-
-          </div>
-
-        </motion.section>
-
-        {/* About */}
-        <motion.section
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="mt-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 shadow-2xl"
-        >
-
-          <h2 className="text-4xl font-bold text-pink-400">
-            About Me
-          </h2>
-
-          <p className="mt-6 text-lg text-gray-300 leading-9">
-            Motivated and enthusiastic Computer Engineering student
-            with strong interest in web development and software
-            technologies. Passionate about creating modern,
-            responsive, and user-friendly applications using
-            frontend and backend technologies. Quick learner with
-            good problem-solving skills and teamwork abilities.
+          <p className="text-lg mt-2 text-gray-300">
+            Student
           </p>
 
-        </motion.section>
-
-        {/* Skills */}
-        <motion.section
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="mt-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 shadow-2xl"
-        >
-
-          <h2 className="text-4xl font-bold text-pink-400">
-            Skills
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-8">
-
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ scale: 1.08 }}
-                className="bg-gradient-to-r from-pink-500 to-purple-600 p-5 rounded-2xl text-center text-lg font-semibold shadow-xl"
-              >
-                {skill}
-              </motion.div>
-            ))}
-
+          <div className="mt-4 grid md:grid-cols-2 gap-2 text-sm">
+            <p>📍 namakal, Tamil Nadu, India</p>
+            <p>📧 s.kaviya5724@gmail.com</p>
+            <p>📞 +91 6369955734</p>
           </div>
+        </div>
 
-        </motion.section>
+        {/* Body */}
+        <div className="grid md:grid-cols-3">
+          {/* Left Sidebar */}
+          <aside className="bg-gray-50 p-6 border-r">
+            {/* Skills */}
+            <section>
+              <h2 className="text-xl font-semibold mb-4 border-b pb-2">
+                Skills
+              </h2>
 
-        {/* Project */}
-        <motion.section
-          initial={{ opacity: 0, y: 80 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="mt-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 shadow-2xl"
-        >
+              <div className="space-y-3">
+                {skills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="bg-slate-900 text-white px-3 py-2 rounded-lg text-sm"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
+            </section>
 
-          <h2 className="text-4xl font-bold text-pink-400">
-            Project
-          </h2>
+            {/* Education */}
+            <section className="mt-10">
+              <h2 className="text-xl font-semibold mb-4 border-b pb-2">
+                Education
+              </h2>
 
-          <div className="mt-6">
-
-            <h3 className="text-2xl font-semibold text-white">
-              Online Car Rental System
-            </h3>
-
-            <p className="mt-5 text-lg text-gray-300 leading-9">
-              Developed an Online Car Rental System project to simplify
-              the process of booking rental vehicles through a digital
-              platform. The application allows users to browse available
-              cars, check rental prices, and reserve vehicles online.
-            </p>
-
-            <p className="mt-5 text-lg text-gray-300 leading-9">
-              The project includes features such as customer registration,
-              login authentication, vehicle listing, booking management,
-              rental status tracking, and contact support. Admin users can
-              manage car details, customer records, and booking information
-              efficiently through the system dashboard.
-            </p>
-
-            <p className="mt-5 text-lg text-gray-300 leading-9">
-              The project was designed with responsive UI principles to
-              ensure smooth usage across desktop and mobile devices. It
-              improved understanding of frontend development, database
-              handling, and real-time user interaction in web applications.
-            </p>
-
-          </div>
-
-        </motion.section>
-
-        {/* Education */}
-        <motion.section
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="mt-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 shadow-2xl"
-        >
-
-          <h2 className="text-4xl font-bold text-pink-400">
-            Education
-          </h2>
-
-          <div className="mt-6 text-lg text-gray-300 leading-9">
-            <p className="text-2xl font-semibold text-white">
-              Diploma in Computer Engineering
-            </p>
-
-            <p className="mt-2">
-              Paavai Polytechnic College
-            </p>
-
-            <p>
-              Namakkal, Tamilnadu - 637201
-            </p>
-
-            <p className="mt-2">
-              Currently Pursuing 3rd Year
-            </p>
-          </div>
-
-        </motion.section>
-
-        {/* Achievements */}
-        <motion.section
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="mt-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-10 shadow-2xl"
-        >
-
-          <h2 className="text-4xl font-bold text-pink-400">
-            Achievements
-          </h2>
-
-          <div className="mt-6 text-lg text-gray-300 leading-9">
-
-            <div className="bg-gradient-to-r from-purple-600 to-pink-500 p-6 rounded-2xl shadow-xl">
-
-              <h3 className="text-2xl font-semibold text-white">
-                AI Futures Hackathon
-              </h3>
-
-              <p className="mt-3">
-                Participated in the AI Futures Hackathon and secured
-                Third Place. Successfully presented innovative ideas
-                and received certification for outstanding performance
-                in the competition.
+              <h3 className="font
+              
+              -semibold">Diploma</h3>
+              <p className="text-sm text-gray-600">
+                Computer Science / Information Technology
               </p>
+            </section>
 
-            </div>
+            {/* Languages */}
+            <section className="mt-10">
+              <h2 className="text-xl font-semibold mb-4 border-b pb-2">
+                Languages
+              </h2>
 
-          </div>
+              <ul className="space-y-2 text-sm">
+                <li>✅ English</li>
+                <li>✅ Tamil</li>
+              </ul>
+            </section>
+          </aside>
 
-        </motion.section>
+          {/* Main Content */}
+          <section className="md:col-span-2 p-8">
+            {/* Profile */}
+            <section>
+              <h2 className="text-2xl font-bold mb-4 text-slate-900">
+                Profile
+              </h2>
 
+              <p className="text-gray-700 leading-7">
+                Passionate student and aspiring full-stack developer with knowledge in
+                Next.js, React, Tailwind CSS, and web application development.
+                Interested in building modern websites, learning new technologies,
+                and developing real-world software projects.
+              </p>
+            </section>
+
+            {/* Experience */}
+            <section className="mt-10">
+              <h2 className="text-2xl font-bold mb-6 text-slate-900">
+                Experience
+              </h2>
+
+              <div className="space-y-8">
+
+
+                <div>
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+                    <h3 className="text-xl font-semibold">
+                      Next JS Developer
+                    </h3>
+                  </div>
+
+                  <p className="text-blue-600 font-medium">
+                    Intern
+                  </p>
+
+                  <ul className="list-disc ml-6 mt-3 text-gray-700 space-y-2">
+                    <li>
+                      Built a simple e-commerce website using Next.js and Tailwind CSS.
+                    </li>
+
+                    <li>
+                      Developed product listing, cart, and responsive user interface features.
+                    </li>
+
+                    <li>
+                      Learned API integration and modern frontend development concepts.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* Projects */}
+            <section className="mt-10">
+              <h2 className="text-2xl font-bold mb-6 text-slate-900">
+                Projects
+              </h2>
+
+              <div className="grid md:grid-cols-2 gap-5">
+                {projects.map((project) => (
+                  <div
+                    key={project}
+                    className="border rounded-xl p-5 hover:shadow-lg transition bg-white"
+                  >
+                    <h3 className="font-semibold text-lg">{project}</h3>
+
+                    <p className="text-sm text-gray-600 mt-2">
+                      Developed using Next.js, TypeScript, Tailwind CSS, APIs,
+                      and cloud infrastructure.
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </section>
+        </div>
       </div>
-
     </main>
   );
 }
